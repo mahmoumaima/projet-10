@@ -10,7 +10,7 @@ Cypress.Commands.add('login', (credentials) => {
 })
 
 Cypress.Commands.add('loginPage', (user) => {
-  cy.visit('http://localhost:42s00/#/login');
+  cy.visit('http://localhost:4200/#/login');
   cy.get('[data-cy=login-input-username]').type(user.username);
   cy.get('[data-cy=login-input-password]').type(user.password);
   cy.get('[data-cy=login-submit]').click();

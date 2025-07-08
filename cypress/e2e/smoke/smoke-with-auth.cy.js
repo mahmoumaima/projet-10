@@ -3,6 +3,7 @@ describe('Smoke Tests Connecté – Eco Bliss Bath V2', () => {
     beforeEach(() => {
         // Charger les fixtures utilisateurs
         cy.fixture('users.json').then(users => {
+        console.log(users.valid);
         // Utiliser la commande custom cy.login s'authentifier
         cy.loginPage(users.valid);
         });
@@ -17,7 +18,7 @@ describe('Smoke Tests Connecté – Eco Bliss Bath V2', () => {
     cy.get('[data-cy="nav-link-login"]').should('not.exist');
     cy.get('[data-cy="nav-link-register"]').should('not.exist');
 
-    cy.get('[data-cy="nav-link-logout"]').click();``
+    cy.get('[data-cy="nav-link-logout"]').click();
     
     cy.get('[data-cy="nav-link-logout"]').should('not.exist');
     cy.get('[data-cy="nav-link-cart"]').should('not.exist');
